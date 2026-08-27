@@ -437,7 +437,23 @@
 
     tg.ready();
     tg.expand();
-
+   
+    document.body.insertAdjacentHTML(
+    "afterbegin",
+    `<div id="debug" style="
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        z-index:9999;
+        background:white;
+        color:black;
+        padding:15px;
+        font-size:14px;
+    ">
+        Telegram: ${tg.initData ? "CONNECTED ✅" : "NOT CONNECTED ❌"}
+    </div>`
+);
     async function loadProfile() {
 
         console.log("Telegram InitData:", tg.initData);
