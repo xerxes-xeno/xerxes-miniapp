@@ -477,6 +477,11 @@
 
             const data = await response.json();
 
+            document.getElementById("debug").innerHTML =
+    "API RESPONSE:<br><pre>" +
+    JSON.stringify(data, null, 2) +
+    "</pre>";
+            
             console.log("Profile API response:", data);
 
             if (!response.ok || data.error) {
