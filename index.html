@@ -465,6 +465,9 @@
 
         try {
 
+    document.getElementById("debug").innerHTML =
+    "STEP 1: FETCH STARTED";       
+          
             const response = await fetch(
                 "https://telegram-bot-production-53dc.up.railway.app/api/profile",
                 {
@@ -477,7 +480,7 @@
 
             const data = await response.json();
 
-            document.getElementById("debug").innerHTML =
+    document.getElementById("debug").innerHTML =
     "API RESPONSE:<br><pre>" +
     JSON.stringify(data, null, 2) +
     "</pre>";
